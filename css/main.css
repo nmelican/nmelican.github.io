@@ -69,11 +69,18 @@
   font-style: normal;
 }
 
+/* global document settings */
+html {
+  /* so that boxes don't shrink or enlarge when padding or borders are added */
+  box-sizing: border-box;
+}
+
 /* now on to visual definitions itself */
 body {
-  margin-left: 10%;
-  margin-right: 10%;
+  /* margin shorthand: values are top right bottom left */
+  margin: 0 10% 0 10%;
   font-family: 'Merriweather Light';
+  font-size: 100%;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -82,8 +89,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .story {
   background-color: WhiteSmoke;
-  margin-left: 1%;
-  margin-right: 1%;
+  margin: 0 1% 0 1%;
   padding: 1em;
 }
 
