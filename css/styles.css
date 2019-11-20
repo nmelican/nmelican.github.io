@@ -1,81 +1,259 @@
 /* invoking custom web fonts */
+
 @font-face {
-  font-family: 'League Gothic';
-  src: url('../fonts/LeagueGothic-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Merriweather Black';
+    src: url('../fonts/Merriweather-Black.ttf') format('truetype');
+    font-weight: bolder;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'League Gothic Italic';
-  src: url('../fonts/LeagueGothic-Italic.otf') format('opentype');
-  font-weight: normal;
-  font-style: italic;
+    font-family: 'Merriweather Black Italic';
+    src: url('../fonts/Merriweather-BlackItalic.ttf') format('truetype');
+    font-weight: bolder;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Merriweather Black';
-  src: url('../../fonts/Merriweather-Black.ttf') format('truetype');
-  font-weight: bolder;
-  font-style: normal;
+    font-family: 'Merriweather Bold';
+    src: url('../fonts/Merriweather-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Merriweather Black Italic';
-  src: url('../fonts/Merriweather-BlackItalic.ttf') format('truetype');
-  font-weight: bolder;
-  font-style: italic;
+    font-family: 'Merriweather Bold Italic';
+    src: url('../fonts/Merriweather-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Merriweather Bold';
-  src: url('../fonts/Merriweather-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
+    font-family: 'Merriweather Italic';
+    src: url('../fonts/Merriweather-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Merriweather Bold Italic';
-  src: url('../fonts/Merriweather-BoldItalic.ttf') format('truetype');
-  font-weight: bold;
-  font-style: italic;
+    font-family: 'Merriweather Light';
+    src: url('../fonts/Merriweather-Light.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Merriweather Italic';
-  src: url('../fonts/Merriweather-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
+    font-family: 'Merriweather Light Italic';
+    src: url('../fonts/Merriweather-LightItalic.ttf') format('truetype');
+    font-weight: lighter;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Merriweather Light';
-  src: url('../fonts/Merriweather-Light.ttf') format('truetype');
-  font-weight: lighter;
-  font-style: normal;
+    font-family: 'Merriweather Regular';
+    src: url('../fonts/Merriweather-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*----------------- alternative fonts-------------------*/
+@font-face {
+    font-family: 'Inria Sans Bold';
+    src: url('../fonts/InriaSans-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: 'Merriweather Light Italic';
-  src: url('../fonts/Merriweather-LightItalic.ttf') format('truetype');
-  font-weight: lighter;
-  font-style: italic;
+    font-family: 'Inria Sans Bold Italic';
+    src: url('../fonts/InriaSans-BoldItalic.otf') format('opentype');
+    font-weight: bold;
+    font-style: italic;
 }
 
 @font-face {
-  font-family: 'Merriweather Regular';
-  src: url('../fonts/Merriweather-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Inria Sans Italic';
+    src: url('../fonts/InriaSans-Italic.otf') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inria Sans Light';
+    src: url('../fonts/InriaSans-Light.otf') format('opentype');
+    font-weight: lighter;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inria Sans Light Italic';
+    src: url('../fonts/InriaSans-LightItalic.otf') format('opentype');
+    font-weight: lighter;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inria Sans Regular';
+    src: url('../fonts/InriaSans-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* global document settings */
+
 html {
-  /* so that boxes don't shrink or enlarge when padding or borders are added */
-  box-sizing: border-box;
+    /* so that boxes don't shrink or enlarge when padding or borders are added */
+    box-sizing: border-box;
+}
+
+/*
+  WAT IS THIS?!
+  We inherit box-sizing: border-box; from our <html> selector
+  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector (Bos, 2019)
+*/
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 /* now on to visual definitions itself */
+
 body {
-  font-family: 'Merriweather Light';
+    font-family: 'Merriweather Light';
+    font-size: 100%;
+    margin: 25px;
+    min-height: calc(100vh - 20px);
+}
+
+/* invoking CSS grid */
+
+.gridframe {
+    display: grid;
+    grid-gap: 10px;
+    border: 1px solid black;
+}
+
+.masthead {
+  display: grid;
+  border: 1px solid yellow;
+  grid-gap: 10px;
+  /* future content for properly structured menu bar
+  grid-template-rows: 8fr 1fr 1fr;*/
+}
+
+/*.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax (100px, 1fr));
+}
+
+.placeholder {
+
+}*/
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 10px;
+}
+
+.content>* {
+  grid-column: 3 / -3;
+}
+
+.flourish {
+  margin: 0;
+  grid-column: 2 / -2;
+}
+
+
+@media (max-width: 700px)  {
+  .content {
+    display: grid;
+    grid-template-columns: /*repeat(5, 1fr)*/;
+    /*if stuff gets too crowded:*/
+    grid-template-columns: 1fr repeat(3, 3fr) 1fr;
+  }
+
+  .content>* {
+    grid-column: 2 / -2;
+  }
+
+  .flourish {
+    margin: 0;
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 500px)  {
+  .content {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.footer {
+  display: grid;
+  border: 1px solid blue;
+}
+
+.item {
+  border: 1px solid green;
+  text-align: center;
+}
+/* more stylistic things */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Merriweather Bold';
+    margin-bottom: 0rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 2.25rem;
+}
+
+h4 {
+    font-size: 2rem;
+}
+
+h5 {
+    font-size: 1.75rem;
+}
+
+h6 {
+    font-size: 1.5rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+.byline {
+    font-size: 1.25rem;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+}
+
+.lead {
+    font-size: 1.25rem;
+    text-align: center;
+    font-family: 'Merriweather Italic'
+}
+
+.alternative {
+  font-family: 'Inria Sans Regular';
 }
