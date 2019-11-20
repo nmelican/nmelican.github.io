@@ -131,7 +131,6 @@ body {
 .gridframe {
     display: grid;
     grid-gap: 10px;
-    border: 1px solid black;
 }
 
 .masthead {
@@ -186,7 +185,8 @@ body {
   background-color: silver;
 }
 
-a {
+.menu1 a {
+  display: block;
   text-decoration: none;
 }
 
@@ -295,6 +295,11 @@ h5 {
 
 h6 {
     font-size: 1.5rem;
+}
+
+p {
+  line-height: 1.8;
+  margin: 0.5rem 0rem 0.5rem 0rem;
 }
 
 img {
