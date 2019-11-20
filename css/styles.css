@@ -136,9 +136,8 @@ body {
 
 .masthead {
   display: grid;
-  border: 1px solid yellow;
   grid-gap: 10px;
-  grid-template-rows: minmax(150px, 1fr) 1fr 1fr;
+  grid-template-rows: minmax(150px, 1fr) auto;
 }
 
 .head {
@@ -160,15 +159,35 @@ body {
 .sitetitle {
   margin: 0;
   padding: 25px;
+  font-family: 'Inria Sans Bold';
+  text-transform: uppercase;
 }
 
-.menu {
+.menu1 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax (100px, 1fr));
+  grid-gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.locator {
+.menu1>li {
+  border: 1px solid black;
+  padding: 10px;
+  font-family: 'Inria Sans Bold';
+  text-decoration: none;
+  letter-spacing: 1px;
+}
 
+.menu1>li:hover {
+  background-color: silver;
+}
+
+a {
+  text-decoration: none;
 }
 
 .content {
@@ -209,6 +228,24 @@ body {
   .content {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  .menu1 {
+    display: grid;
+    grid-gap: 10px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: 1fr;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .menu1>li {
+    background-color: silver;
+    padding: 10px;
+    font-family: 'Inria Sans Bold';
+    letter-spacing: 1px;
   }
 }
 
