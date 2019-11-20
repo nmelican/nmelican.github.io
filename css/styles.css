@@ -252,13 +252,15 @@ a {
 
 .footer {
   display: grid;
-  border: 1px solid blue;
 }
 
-.item {
-  border: 1px solid green;
+.footertext {
+  font-size: 0.75rem;
+  font-family: 'Merriweather Light Italic';
+  font-style: italic;
   text-align: center;
 }
+
 /* more stylistic things */
 
 h1,
@@ -297,6 +299,16 @@ h6 {
 
 img {
   max-width: 100%;
+}
+
+hr {
+  width: 100%;
+}
+
+figcaption, .caption {
+  font-family: 'Merriweather Light Italic';
+  font-size: 0.75rem;
+  font-style: italic;
 }
 
 .byline {
