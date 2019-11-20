@@ -131,6 +131,7 @@ body {
 .gridframe {
     display: grid;
     grid-gap: 10px;
+    background-color: #F8F8F8;
 }
 
 .masthead {
@@ -165,7 +166,7 @@ body {
 .menu1 {
   display: grid;
   grid-gap: 10px;
-  margin: 0;
+  margin: 0 10px 0 10px;
   padding: 0;
   list-style: none;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
