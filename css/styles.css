@@ -138,18 +138,36 @@ body {
   display: grid;
   border: 1px solid yellow;
   grid-gap: 10px;
-  /* future content for properly structured menu bar
-  grid-template-rows: 8fr 1fr 1fr;*/
+  grid-template-rows: 150px auto auto;
 }
 
-/*.menu {
+.head {
+  background: url(../images/banner.jpg);
+  /*this image's dimensions are 1092 x 364*/
+  background-size: auto 100%;
+  background-position: center;
+  display: grid;
+}
+
+.head > div {
+  background-color: rgba(255,255,255,0.75);
+  margin: 0;
+  align-items: center;
+  justify-items: center;
+}
+
+.sitetitle {
+  padding-left: 20px;
+}
+
+.menu {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax (100px, 1fr));
 }
 
-.placeholder {
+.locator {
 
-}*/
+}
 
 .content {
   display: grid;
