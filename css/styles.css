@@ -153,7 +153,6 @@ body {
   background-color: rgba(255,255,255,0.75);
   justify-self: center;
   align-self: center;
-
 }
 
 .sitetitle {
@@ -341,6 +340,14 @@ figcaption, .caption {
 
 a {
   color: black;
+}
+
+i {
+  font-family: 'Merriweather Light Italic';
+}
+
+b {
+  font-family: 'Merriweather Bold';
 }
 
 .byline {
