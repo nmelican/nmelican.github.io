@@ -193,7 +193,7 @@ body {
 
 .content {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(11, 1fr);
   grid-gap: 10px;
 }
 
@@ -204,6 +204,8 @@ body {
 .flourish {
   margin: 0;
   grid-column: 2 / -2;
+  background-color: silver;
+  padding: 5px;
 }
 
 
@@ -256,7 +258,7 @@ body {
 }
 
 .footertext {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-family: 'Merriweather Light Italic';
   font-style: italic;
   text-align: center;
@@ -271,31 +273,31 @@ h4,
 h5,
 h6 {
     font-family: 'Merriweather Bold';
-    margin-bottom: 0rem;
+    margin: 0rem;
 }
 
 h1 {
-    font-size: 3rem;
-}
-
-h2 {
     font-size: 2.5rem;
 }
 
-h3 {
+h2 {
     font-size: 2.25rem;
 }
 
-h4 {
+h3 {
     font-size: 2rem;
 }
 
-h5 {
+h4 {
     font-size: 1.75rem;
 }
 
-h6 {
+h5 {
     font-size: 1.5rem;
+}
+
+h6 {
+    font-size: 1.25rem;
 }
 
 p {
@@ -315,6 +317,8 @@ figcaption, .caption {
   font-family: 'Merriweather Light Italic';
   font-size: 0.75rem;
   font-style: italic;
+
+  margin: 5px 5px 0px 2px;
 }
 
 a {
@@ -322,17 +326,38 @@ a {
 }
 
 .byline {
-    font-size: 1.25rem;
+    font-size: 1rem;
     border-bottom: 1px solid black;
     font-weight: bold;
 }
 
 .lead {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     text-align: center;
-    font-family: 'Merriweather Italic'
+    font-family: 'Merriweather Light Italic'
 }
 
 .alternative {
   font-family: 'Inria Sans Regular';
+}
+
+.kicker {
+  font-family: 'Inria Sans Light';
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.headline {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.subhead {
+  font-family: 'Merriweather Light Italic';
+  text-align: center;
+}
+
+.sectionhead {
+  font-family: 'Merriweather Bold';
 }
