@@ -1,4 +1,7 @@
-/* invoking custom web fonts */
+/*--------------WEBFONTS-------------*/
+
+
+/*Merriweather Black*/
 
 @font-face {
     font-family: 'Merriweather Black';
@@ -7,12 +10,18 @@
     font-style: normal;
 }
 
+
+/*Merriweather Black Italic*/
+
 @font-face {
     font-family: 'Merriweather Black Italic';
     src: url('../fonts/Merriweather-BlackItalic.ttf') format('truetype');
     font-weight: bolder;
     font-style: italic;
 }
+
+
+/*Merriweather Bold*/
 
 @font-face {
     font-family: 'Merriweather Bold';
@@ -21,12 +30,18 @@
     font-style: normal;
 }
 
+
+/*Merriweather Bold Italic*/
+
 @font-face {
     font-family: 'Merriweather Bold Italic';
     src: url('../fonts/Merriweather-BoldItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
 }
+
+
+/*Merriweather Italic*/
 
 @font-face {
     font-family: 'Merriweather Italic';
@@ -35,12 +50,18 @@
     font-style: italic;
 }
 
+
+/*Merriweather Light*/
+
 @font-face {
     font-family: 'Merriweather Light';
     src: url('../fonts/Merriweather-Light.ttf') format('truetype');
     font-weight: lighter;
     font-style: normal;
 }
+
+
+/*Merriweather Light Italic*/
 
 @font-face {
     font-family: 'Merriweather Light Italic';
@@ -49,6 +70,9 @@
     font-style: italic;
 }
 
+
+/*Merriweather Regular*/
+
 @font-face {
     font-family: 'Merriweather Regular';
     src: url('../fonts/Merriweather-Regular.ttf') format('truetype');
@@ -56,13 +80,21 @@
     font-style: normal;
 }
 
-/*----------------- alternative fonts-------------------*/
+
+/*--------------WEBFONTS ALTERNATIVE-------------*/
+
+
+/*Inria Sans Bold*/
+
 @font-face {
     font-family: 'Inria Sans Bold';
     src: url('../fonts/InriaSans-Bold.otf') format('opentype');
     font-weight: bold;
     font-style: normal;
 }
+
+
+/*Inria Sans Bold Italic*/
 
 @font-face {
     font-family: 'Inria Sans Bold Italic';
@@ -71,12 +103,18 @@
     font-style: italic;
 }
 
+
+/*Inria Sans Italic*/
+
 @font-face {
     font-family: 'Inria Sans Italic';
     src: url('../fonts/InriaSans-Italic.otf') format('opentype');
     font-weight: normal;
     font-style: italic;
 }
+
+
+/*Inria Sans Light*/
 
 @font-face {
     font-family: 'Inria Sans Light';
@@ -85,12 +123,18 @@
     font-style: normal;
 }
 
+
+/*Inria Sans Light Italic*/
+
 @font-face {
     font-family: 'Inria Sans Light Italic';
     src: url('../fonts/InriaSans-LightItalic.otf') format('opentype');
     font-weight: lighter;
     font-style: italic;
 }
+
+
+/*Inria Sans Regular*/
 
 @font-face {
     font-family: 'Inria Sans Regular';
@@ -99,25 +143,205 @@
     font-style: normal;
 }
 
-/* global document settings */
+
+/*--------------PAGE GRID DEFINITIONS-------------*/
+
+
+/*Grid container*/
+
+.gridframe {
+    display: grid;
+    grid-gap: 10px;
+    background-color: #F8F8F8;
+}
+
+
+/*Page header container*/
+
+.masthead {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: minmax(150px, 1fr) auto;
+}
+
+
+/*Logo and site branding*/
+
+.head {
+    background: url(../images/banner.jpg);
+    /*this image's dimensions are 1092 x 364*/
+    background-size: auto 100%;
+    background-position: center;
+    display: grid;
+    grid-gap: 10px;
+}
+
+
+/*format all elements inside class head like so*/
+
+.head>* {
+    background-color: rgba(255, 255, 255, 0.75);
+    justify-self: center;
+    align-self: center;
+}
+
+
+/*Menu grid*/
+
+.menu1 {
+    display: grid;
+    grid-gap: 10px;
+    margin: 0 10px 0 10px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    text-align: center;
+    text-transform: uppercase;
+}
+
+
+/*Content grid.
+Propose to differentiate content grid from story grid in the future.*/
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-gap: 10px;
+}
+
+
+/*Let elements inside the content grid start from 3rd column*/
+
+.content>* {
+    grid-column: 3 / -3;
+}
+
+
+/*Let elements with the class flourish start from the 2nd column*/
+
+.flourish {
+    margin: 0;
+    grid-column: 2 / -2;
+    background-color: silver;
+    padding: 5px;
+}
+
+
+/*Gallery grid. For galleries of photos and links.*/
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    grid-gap: 10px;
+}
+
+
+/*Footer grid.*/
+
+.footer {
+    display: grid;
+}
+
+
+/*--------------MEDIA QUERIES FOR RESPONSIVE GRIDS-------------*/
+
+
+/*For screens with less than 1024 pixels in width.
+Let the main menu display only two columns.*/
+
+@media (max-width: 1023px) {
+    .menu1 {
+        display: grid;
+        grid-gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}
+
+
+/*For screens with less than 701 pixels in width, e.g., tablets.
+Let content grid have less columns than a full-sized display,
+but with narrower vestiges and wider content columns.
+Also defines behaviours for flourish (start at the vestiges)
+and gallery (takes up just one column instead of three).*/
+
+@media (max-width: 700px) {
+    .content {
+        display: grid;
+        grid-template-columns: 1fr repeat(3, 3fr) 1fr;
+    }
+    .content>* {
+        grid-column: 2 / -2;
+    }
+    .flourish {
+        margin: 0;
+        grid-column: 1 / -1;
+    }
+    .gallery {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+}
+
+
+/*For screens with less than 501 pixels in width, e.g., mobiles.
+Content, as well as items classed as flourish will take up the
+space of the entire screen. The main menu takes up one column.
+Also the menu options have a silver background colour.*/
+
+@media (max-width: 500px) {
+    .content {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .menu1 {
+        display: grid;
+        grid-gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        grid-template-columns: 1fr;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    .menu1>li {
+        background-color: silver;
+        padding: 10px;
+        font-family: 'Inria Sans Bold';
+        letter-spacing: 1px;
+    }
+}
+
+
+/*--------------GLOBAL DOCUMENT SETTINGS-------------*/
+
+
+/* so that boxes don't shrink or enlarge when padding or borders are added */
 
 html {
-    /* so that boxes don't shrink or enlarge when padding or borders are added */
     box-sizing: border-box;
 }
 
+
 /*
-  WAT IS THIS?!
-  We inherit box-sizing: border-box; from our <html> selector
-  Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector (Bos, 2019)
+WAT IS THIS?!
+We inherit box-sizing: border-box; from our <html> selector
+Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector (Bos, 2019)
 */
+
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
-/* now on to visual definitions itself */
+
+/*Default font, size, and margin for the body*/
 
 body {
     font-family: 'Merriweather Light';
@@ -126,162 +350,68 @@ body {
     min-height: calc(100vh - 20px);
 }
 
-/* invoking CSS grid */
 
-.gridframe {
-    display: grid;
-    grid-gap: 10px;
-    background-color: #F8F8F8;
-}
+/*--------------DOCUMENT FORMATTING SETTINGS-------------*/
 
-.masthead {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-rows: minmax(150px, 1fr) auto;
-}
 
-.head {
-  background: url(../images/banner.jpg);
-  /*this image's dimensions are 1092 x 364*/
-  background-size: auto 100%;
-  background-position: center;
-  display: grid;
-  grid-gap: 10px;
-}
+/*--------------FOR GRID ELEMENTS-------------*/
 
-.head>* {
-  background-color: rgba(255,255,255,0.75);
-  justify-self: center;
-  align-self: center;
-}
+
+/*Formatting for site title*/
 
 .sitetitle {
-  margin: 0;
-  padding: 25px;
-  font-family: 'Inria Sans Bold';
-  text-transform: uppercase;
+    margin: 0;
+    padding: 25px;
+    font-family: 'Inria Sans Bold';
+    text-transform: uppercase;
 }
 
-.menu1 {
-  display: grid;
-  grid-gap: 10px;
-  margin: 0 10px 0 10px;
-  padding: 0;
-  list-style: none;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  text-align: center;
-  text-transform: uppercase;
-}
+
+/*Formatting for menu elements*/
 
 .menu1>li {
-  border: 1px solid black;
-  padding: 10px;
-  font-family: 'Inria Sans Bold';
-  text-decoration: none;
-  letter-spacing: 1px;
+    border: 1px solid black;
+    padding: 10px;
+    font-family: 'Inria Sans Bold';
+    text-decoration: none;
+    letter-spacing: 1px;
 }
 
 .menu1>li:hover {
-  background-color: silver;
+    background-color: silver;
 }
 
 .menu1 a,
 .gallery a,
 .galleryitem a {
-  display: block;
-  text-decoration: none;
+    display: block;
+    text-decoration: none;
 }
 
-.content {
-  display: grid;
-  grid-template-columns: repeat(11, 1fr);
-  grid-gap: 10px;
-}
 
-.content>* {
-  grid-column: 3 / -3;
-}
-
-.flourish {
-  margin: 0;
-  grid-column: 2 / -2;
-  background-color: silver;
-  padding: 5px;
-}
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(180px, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax(180px, 1fr));
-  grid-gap: 10px;
-}
+/*Formatting for gallery items*/
 
 .galleryitem {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: 1px solid black;
-  padding: 20px;
-}
-
-
-@media (max-width: 700px)  {
-  .content {
-    display: grid;
-    grid-template-columns: /*repeat(5, 1fr)*/;
-    /*if stuff gets too crowded:*/
-    grid-template-columns: 1fr repeat(3, 3fr) 1fr;
-  }
-
-  .content>* {
-    grid-column: 2 / -2;
-  }
-
-  .flourish {
-    margin: 0;
-    grid-column: 1 / -1;
-  }
-}
-
-@media (max-width: 500px)  {
-  .content {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  .menu1 {
-    display: grid;
-    grid-gap: 10px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    grid-template-columns: 1fr;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    text-transform: uppercase;
-  }
-
-  .menu1>li {
-    background-color: silver;
-    padding: 10px;
-    font-family: 'Inria Sans Bold';
-    letter-spacing: 1px;
-  }
+    border: 1px solid black;
+    padding: 20px;
 }
 
 
-.footer {
-  display: grid;
-}
+/*Formatting for footer items*/
 
 .footertext {
-  font-size: 1rem;
-  font-family: 'Merriweather Light Italic';
-  font-style: italic;
-  text-align: center;
+    font-size: 1rem;
+    font-family: 'Merriweather Light Italic';
+    font-style: italic;
+    text-align: center;
 }
 
-/* more stylistic things */
+
+/*--------------FOR TAGS-------------*/
 
 h1,
 h2,
@@ -318,37 +448,40 @@ h6 {
 }
 
 p {
-  line-height: 1.8;
-  margin: 0.5rem 0rem 0.5rem 0rem;
+    line-height: 1.8;
+    margin: 0.5rem 0rem 0.5rem 0rem;
 }
 
 img {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 hr {
-  width: 100%;
+    width: 100%;
 }
 
-figcaption, .caption {
-  font-family: 'Merriweather Light Italic';
-  font-size: 0.75rem;
-  font-style: italic;
-
-  margin: 5px 5px 0px 2px;
+figcaption,
+.caption {
+    font-family: 'Merriweather Light Italic';
+    font-size: 0.75rem;
+    font-style: italic;
+    margin: 5px 5px 0px 2px;
 }
 
 a {
-  color: black;
+    color: black;
 }
 
 i {
-  font-family: 'Merriweather Light Italic';
+    font-family: 'Merriweather Light Italic';
 }
 
 b {
-  font-family: 'Merriweather Bold';
+    font-family: 'Merriweather Bold';
 }
+
+
+/*--------------USER-DEFINED CLASSES-------------*/
 
 .byline {
     font-size: 1rem;
@@ -359,30 +492,31 @@ b {
 .lead {
     font-size: 1.15rem;
     text-align: center;
-    font-family: 'Merriweather Light Italic'
+    font-family: 'Merriweather Light Italic';
+    font-style: italic;
 }
 
 .alternative {
-  font-family: 'Inria Sans Regular';
+    font-family: 'Inria Sans Regular';
 }
 
 .kicker {
-  font-family: 'Inria Sans Light';
-  text-align: center;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+    font-family: 'Inria Sans Light';
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
 
 .headline {
-  text-align: center;
-  margin-bottom: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .subhead {
-  font-family: 'Merriweather Light Italic';
-  text-align: center;
+    font-family: 'Merriweather Light Italic';
+    text-align: center;
 }
 
 .sectionhead {
-  font-family: 'Merriweather Bold';
+    font-family: 'Merriweather Bold';
 }
